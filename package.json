@@ -12,6 +12,7 @@
     "@vee-validate/rules": "^4.7.0",
     "cypress": "^10.9.0",
     "firebase": "^8.10.1",
+    "howler": "^2.2.3",
     "pinia": "^2.0.23",
     "vee-validate": "^4.7.0",
     "vue": "^3.2.37",
