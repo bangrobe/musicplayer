@@ -7,8 +7,10 @@ services:
       target: production
     # command: npm run start
     container_name: vue_musicplayer
+    restart: always
     ports:
-      - '8001:8080'
+      - '80:80'
+      - '443:443'
     volumes:
       - ./:/app
       - /app/node_modules
