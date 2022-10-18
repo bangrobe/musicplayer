@@ -4,6 +4,9 @@
       <router-link :to="{name: 'home'}" class="text-white font-bold uppercase text-2xl mr-4">Music</router-link>
       <div class="flex flex-grow items-center">
         <ul class="flex flex-row mt-1">
+          <li>
+            <router-link to="/about" class="px-2 text-white">About</router-link>
+          </li>
           <li v-if="!userStore.userLoggedIn">
             <a class="px-2 text-white" href="#" @click.prevent="toggleAuthModal"
               >Login / Register</a
@@ -18,6 +21,11 @@
             </li>
           </template>
         </ul>
+        <ul class="ml-auto flex flex-row">
+          <li>
+            <a href="" class="px-2 text-white" @click.prevent="changeLocale"> {{ currentLocale }}</a>
+          </li>
+        </ul>
       </div>
     </nav>
   </header>
@@ -31,6 +39,9 @@ export default {
   name: "AppHeader",
   computed: {
     ...mapStores(useModalStore, useUserStore),
+    currentLocale() {
+      return this.$i18n.locale === "vi" ? "Vietnamese" : "English"
+    }
   },
   methods: {
     toggleAuthModal() {
@@ -44,6 +55,9 @@ export default {
         if (this.$route.meta.requiresAuth) {
             this.$router.push({name: 'home'})
         }
+    },
+    changeLocale() {
+      this.$i18n.locale = this.$i18n.locale === "vi" ? "en" : "vi";
     }
   },
 };

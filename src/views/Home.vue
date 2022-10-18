@@ -8,7 +8,7 @@
       ></div>
       <div class="container mx-auto">
         <div class="text-white main-header-content">
-          <h1 class="font-bold text-5xl mb-5">Listen to Great Music!</h1>
+          <h1 class="font-bold text-5xl mb-5">{{ $t("home.listen")}}</h1>
           <p class="w-full md:w-8/12 mx-auto">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
             et dolor mollis, congue augue non, venenatis elit. Nunc justo eros,
@@ -20,7 +20,7 @@
 
       <img
         class="relative block mx-auto mt-5 -mb-20 w-auto max-w-full"
-        src="assets/img/introduction-music.png"
+        src="/assets/img/introduction-music.png"
       />
     </section>
 
@@ -100,7 +100,6 @@ export default {
       });
 
       this.pendingRequest = false;
-      console.log(this.songs);
     },
     handleScroll() {
       const { scrollTop, offsetHeight } = document.documentElement;
@@ -120,3 +119,18 @@ export default {
   },
 };
 </script>
+<style scoped>
+.introduction-bg {
+  animation: slide 50s linear infinite;
+  will-change: background-position;
+  z-index: -1;
+}
+@keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -4000px 0;
+  }
+}
+</style>

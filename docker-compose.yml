@@ -1,0 +1,14 @@
+version: '3'
+services:
+  vue-musicplayer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    # command: npm run start
+    container_name: vue_musicplayer
+    ports:
+      - '8001:8080'
+    volumes:
+      - ./:/app
+      - /app/node_modules
