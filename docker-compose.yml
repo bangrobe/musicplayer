@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: production
+    # target: production
     # command: npm run start
     container_name: vue_musicplayer
     restart: always
