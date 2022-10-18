@@ -10,7 +10,7 @@ FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/configfile.template
 
 #Copy certificate to /etc/ssl
-COPY ./certificates /etc/ssl
+COPY /certificates /etc/ssl
 COPY --from=vue-build /app/dist /usr/share/nginx/html
 ENV PORT 80
 ENV HOST 0.0.0.0
