@@ -9,8 +9,12 @@ services:
     container_name: vue_musicplayer
     restart: always
     ports:
-      - '80:80'
-      - '443:443'
+      - '80'
     volumes:
       - ./:/app
       - /app/node_modules
+    networks:
+      - nginxproxyman
+networks:
+  nginxproxyman:
+    external: true
